@@ -1,9 +1,204 @@
+%YAML 1.2
+---
 description: "CMD-X: From Outrage to Insight with LLMs and Digital Gardens"
 author: "Andy Gayton"
+theme: dracula
 option:
   hash: true
   slide number: c/t
+style: |
+  .reveal .slide-number {
+      font-size: 24pt;
+      position: absolute;
+      right: 2em;
+      top: 1em;
+      color: #877b68;
+      background-color: transparent;
+  }
+  .reveal p {
+      font-size: 30pt;
+  }
+  .left-align p {
+      text-align: left;
+  }
+  .reduce p {
+    font-size: 16pt;
+  }
+  img {
+    border-radius: 10px;
+  }
+  .reveal pre code {
+    max-height: 80vh;
+  }
 ---
-- title: "AI CURIOUS Lunch 'n Learn"
-  doc: |
-    Hello!
+title: "AI CURIOUS Lunch 'n Learn"
+doc: |
+    CMD-X: From Outrage to Insight with LLMs and Digital Gardens
+
+    Andy Gayton
+
+    *[@ndyg](https://ndyg.ca)*
+---
+title: "About me"
+doc: |
+    - Grew up in Australia, born in '75: old man river
+    - Starting programming when I was 7
+    - But earnestly since I was 12
+    - move the states, California 2005
+    - met my wife we have two girls
+    - End of 2021 we move the family to Toronto
+    - These days, super interested in, how can we use these (information) tools
+      to make things better and what does better even look like?
+---
+doc: |
+     disillusionment with heroes
+---
+doc: |
+    _“Strangers passing in the street \
+    By chance two separate glances meet \
+    And I am you and what I see is me.”_
+
+    _(Pink Floyd, "Echoes", 1971, Roger Waters)_
+---
+doc: |
+     _“Tibet is part of China. It has been absolutely accepted by the whole of the
+     international community since 1948. If you don’t know that, you’re not reading
+     enough.”_
+
+    _(CNN interview, 2022, Roger Waters)_
+---
+class: left-align
+doc: |
+    `prompt>`
+
+    roger waters seems like complex character. focusing on his politics can you
+    respond with two, terse paragraphs:
+
+    the first should be as generous as possible,\
+    and the 2nd as critical as possible
+
+---
+v-stack:
+  - doc: |
+      Things are pretty rough right now.
+  - doc: |
+      We've got existential human-made climate change, inequality.
+    frag: [ { doc: ~, math: ~ } ]
+  - doc: |
+      But it seems like we can't even begin to tackle these challenges for the lack
+      of the ability to have a civil conversation.
+    frag: [ { doc: ~, math: ~ } ]
+---
+class: left-align
+doc: |
+    Today, I hope to persuade to try out two things:
+
+    - Next time you're furious online, hit CMD-X \
+      (pause and paste your reaction into an LLM -- what would actually help?)
+
+    - Plant your thoughts in a Digital Garden\
+      (grow, share thoughtfully, cultivate better conversations)
+---
+title: The Garden and the Stream
+v-stack:
+  - h-stack:
+    - img:
+        src: ./the-garden-and-the-stream-a-technopastoral.png
+        width: 100%
+    - doc: |
+           by Mike Caulfield
+
+           The majority of our current online platforms are optimized for the **stream**
+---
+class: left-align
+doc: |
+    The majority of our current online platforms are optimized for the **stream**:
+
+    - Immediate reactions
+    - Amplified outrage
+    - Quick dismissal and dunking
+    - Attention, not understanding
+
+    In contrast to the **garden**:
+
+    - Slow, thoughtful reflection
+    - Nuanced growth of ideas
+    - Iteration and deeper engagement
+    - Cultivation of genuine understanding
+---
+doc: |
+  ## CMD-X
+
+  **Capture your outrage.**
+  Before posting an angry reply, **hit CMD-X**.
+
+  **Paste it into an LLM** along with the provoking message. Ask for two paragraphs:
+
+  1. A **generous interpretation**—what could they mean?
+  2. A **skeptical view**—why are you triggered?
+
+  **Break the cycle**, reflect deeply, and discover perspectives you'd otherwise miss.
+
+  Here's **Section 5** with the tweet integrated clearly:
+
+---
+title: CMD-X in Action, Interrupting the Stream
+v-stack:
+  - h-stack:
+    - img:
+        src: ./tweet.png
+        width: 100%
+    - doc: |
+        > There’s no time line. Did all this happen in one day or 10 years? Is it real or fabricated?
+
+        _"What are you talking about! Does it matter? What's happening here isn't okay!"_
+---
+doc: |
+  Some thoughts on the original message:
+
+  Cycling Professor's tone
+
+  - "So, how is it going with that...", and the exclamation mark
+  - "Let's watch one zebra crossing to find out!"
+
+  are deeply inappropiate, and unhelpful.
+
+  So what would help?
+
+---
+title: What Do You Do with All These Ideas?
+h-stack:
+  - img:
+      src: ./garden.png
+      width: 100%
+  - doc: |
+      **Plant them in a Digital Garden**
+
+      - Your personal space for thoughtful reflection
+      - Cultivate your ideas slowly, openly, and iteratively
+      - Share intentionally, seek feedback, and deepen understanding
+---
+title: Next time you're furious online...
+
+doc: |
+  **Hit CMD-X.**
+
+  Reflect with an LLM, then plant your insights in a **Digital Garden**.
+
+  It's a cycle: **Garden → LLM → Garden**.
+---
+title: References
+
+class: left-align
+doc: |
+  Digital Gardens:
+
+  - Mike Caulfield: The Garden and the Stream: A Technopastoral
+    - [video](https://www.youtube.com/watch?v=ckv_CjyKyZY)
+    - [reading](https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/)
+  - [Maggie Appleton: A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history)
+
+  Tools for thought:
+
+    - [Obsidian](https://obsidian.md)
+    - [Stacks: a clipboard manager](https://stacks.cross.stream)
