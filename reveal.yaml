@@ -91,13 +91,14 @@ v-stack:
 ---
 class: left-align
 doc: |
-    Today, I hope to persuade to try out two things:
+    Today, I hope to persuade you to try out two things:
 
-    - Next time you're furious online, hit CMD-X \
-      (pause and paste your reaction into an LLM -- what would actually help?)
+    - Next time you're furious online, hit **CMD-X** *(cut)*, pause, and
+      paste your reaction into an LLM. *(Ask yourself: What would actually
+      help?)*
 
-    - Plant your thoughts in a Digital Garden\
-      (grow, share thoughtfully, cultivate better conversations)
+    - Plant your thoughts in a **Digital Garden**: grow ideas, share
+      thoughtfully, and cultivate better conversations.
 ---
 title: The Garden and the Stream
 v-stack:
