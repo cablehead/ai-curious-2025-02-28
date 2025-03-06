@@ -16,4 +16,4 @@ git push origin $"(git subtree split --prefix package main):gh-pages" --force
 
 Slides will [update shortly](https://github.com/cablehead/ai-curious-2025-02-28/actions) at:
 
-`https://<username>.github.io/<repo-name>/`
+https://cablehead.github.io/ai-curious-2025-02-28/
