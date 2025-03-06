@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AI CURIOUS Lunch 'n Learn</title>
+    <meta name="description" content="CMD-X: From Outrage to Insight with LLMs and Digital Gardens">
+    <meta name="author" content="Andy Gayton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/dracula.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+    <style>
+        .chapter-header {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            font-size: 18pt;
+            opacity: 0.5;
+            display: none;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+            display: inline-block;
+        }
+
+        .footer > * {
+            opacity: 0.7;
+        }
+
+        .footer * {
+            vertical-align: middle;
+        }
+
+        .footer span {
+            font-size: 15pt;
+        }
+
+        .reveal figure {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin: 20px;
+        }
+
+        .reveal figcaption {
+            text-align: center;
+        }
+
+        .h-stack {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .h-stack-border {
+            border-left: 2px solid;
+        }
+
+        .v-stack > * {
+            display: block;
+        }
+
+        .v-stack-border {
+            border-top: 2px solid;
+        }
+
+        .reveal h1 {
+            font-size: 36pt;
+        }
+
+        .reveal h2 {
+            font-size: 30pt;
+        }
+
+        .reveal h3 {
+            font-size: 28pt;
+        }
+
+        .reveal h4 {
+            font-size: 24pt;
+        }
+
+        .reveal p, .reveal li, .reveal table, figcaption {
+            font-size: 20pt;
+        }
+
+        .reveal pre code, .reveal section img, #footer-left > a > img {
+            border: none;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        .reveal code {
+            color: white;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+            border-color: #3F3F3F;
+            background: #3F3F3F;
+        }
+
+        .reveal pre code {
+            border-radius: 10px;
+        }
+
+        .img-pop {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .img-pop:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        #modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        #img-demo {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 100%;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 100%;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Animation */
+        #img-demo, #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        #close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #close:hover, #close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            #img-demo {
+                width: 100%;
+            }
+        }
+
+        .reveal .slide-number {
+    font-size: 24pt;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+    color: #877b68;
+    background-color: transparent;
+}
+.reveal p {
+    font-size: 30pt;
+}
+.left-align p {
+    text-align: left;
+}
+.reduce p {
+  font-size: 16pt;
+}
+img {
+  border-radius: 10px;
+}
+.reveal pre code {
+  max-height: 80vh;
+}
+
+    </style>
+</head>
+<body>
+<div style="display: none">
+    <div class="top-object">
+        
+    </div>
+</div>
+<div class="reveal">
+    <div class="slides">
+        <section>
+<section>
+<h1>AI CURIOUS Lunch ’n Learn</h1>
+<p>CMD-X: From Outrage to Insight with LLMs and Digital Gardens</p>
+<p>Andy Gayton</p>
+<p><em><a href="https://ndyg.ca">@ndyg</a></em></p>
+</section><section id="outline">
+<h1>Outline</h1>
+<ul>
+<li><a href="#/1">About me</a></li>
+<li><a href="#/8">The Garden and the Stream</a></li>
+<li><a href="#/11">CMD-X in Action, Interrupting the Stream</a></li>
+<li><a href="#/13">What Do You Do with All These Ideas?</a></li>
+<li><a href="#/14">Next time you’re furious online…</a></li>
+<li><a href="#/15">References</a></li>
+</ul>
+</section>
+</section>
+<section>
+<section>
+<h1>About me</h1>
+<ul>
+<li>Grew up in Australia, born in ’75: old man river</li>
+<li>Started programming when I was 7</li>
+<li>But more seriously since age 12</li>
+<li>Moved to the States (California) in 2005</li>
+<li>Met my wife; we have two girls</li>
+<li>At the end of 2021, we moved the family to Toronto</li>
+<li>These days, I’m interested in how we can use these (information) tools
+to make things better, and in understanding what “better” even looks like.</li>
+</ul>
+</section></section>
+<section>
+<section>
+<p>disillusionment with heroes</p>
+</section></section>
+<section>
+<section>
+<p><em>“Strangers passing in the street <br />
+By chance two separate glances meet <br />
+And I am you and what I see is me.”</em></p>
+<p><em>(Pink Floyd, “Echoes”, 1971, Roger Waters)</em></p>
+</section></section>
+<section>
+<section>
+<p><em>“Tibet is part of China. It has been absolutely accepted by the whole of the
+international community since 1948. If you don’t know that, you’re not reading
+enough.”</em></p>
+<p><em>(CNN interview, 2022, Roger Waters)</em></p>
+</section></section>
+<section>
+<section class="left-align">
+<p><code>prompt&gt;</code></p>
+<p>roger waters seems like complex character. focusing on his politics can you
+respond with two, terse paragraphs:</p>
+<p>the first should be as generous as possible,<br />
+and the 2nd as critical as possible</p>
+</section></section>
+<section>
+<section>
+<div class="v-stack"><div><p>Things are pretty rough right now.</p>
+</div>
+<div><span class="fragment " data-fragment-index="0"><p>We’ve got existential human-made climate change, inequality.</p>
+</span></div>
+<div><span class="fragment " data-fragment-index="1"><p>But it seems like we can’t even begin to tackle these challenges for the lack
+of the ability to have a civil conversation.</p>
+</span></div>
+</div>
+</section></section>
+<section>
+<section class="left-align">
+<p>Today, I hope to persuade to try out two things:</p>
+<ul>
+<li>
+<p>Next time you’re furious online, hit CMD-X <br />
+(pause and paste your reaction into an LLM – what would actually help?)</p>
+</li>
+<li>
+<p>Plant your thoughts in a Digital Garden<br />
+(grow, share thoughtfully, cultivate better conversations)</p>
+</li>
+</ul>
+</section></section>
+<section>
+<section>
+<h1>The Garden and the Stream</h1>
+<div class="v-stack"><div><div class="h-stack"><div style="width:50.0000%"><div class="h-stack">
+<img alt="" src="./the-garden-and-the-stream-a-technopastoral.png" width="100%"/>
+</div>
+</div>
+<div style="width:50.0000%"><p>by Mike Caulfield</p>
+<p>The majority of our current online platforms are optimized for the <strong>stream</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section class="left-align">
+<p>The majority of our current online platforms are optimized for the <strong>stream</strong>:</p>
+<ul>
+<li>Immediate reactions</li>
+<li>Amplified outrage</li>
+<li>Quick dismissal and dunking</li>
+<li>Attention, not understanding</li>
+</ul>
+<p>In contrast to the <strong>garden</strong>:</p>
+<ul>
+<li>Slow, thoughtful reflection</li>
+<li>Nuanced growth of ideas</li>
+<li>Iteration and deeper engagement</li>
+<li>Cultivation of genuine understanding</li>
+</ul>
+</section></section>
+<section>
+<section>
+<h2>CMD-X</h2>
+<p><strong>Capture your outrage.</strong>
+Before posting an angry reply, <strong>hit CMD-X</strong>.</p>
+<p><strong>Paste it into an LLM</strong> along with the provoking message. Ask for two paragraphs:</p>
+<ol>
+<li>A <strong>generous interpretation</strong>—what could they mean?</li>
+<li>A <strong>skeptical view</strong>—why are you triggered?</li>
+</ol>
+<p><strong>Break the cycle</strong>, reflect deeply, and discover perspectives you’d otherwise miss.</p>
+</section></section>
+<section>
+<section>
+<h1>CMD-X in Action, Interrupting the Stream</h1>
+<div class="v-stack"><div><div class="h-stack"><div style="width:50.0000%"><div class="h-stack">
+<img alt="" src="./tweet.png" width="100%"/>
+</div>
+</div>
+<div style="width:50.0000%"><blockquote>
+<p>There’s no time line. Did all this happen in one day or 10 years? Is it real or fabricated?</p>
+</blockquote>
+<p><em>“What are you talking about! Does it matter? What’s happening here isn’t okay!”</em></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section>
+<p>Some thoughts on the original message:</p>
+<p>Cycling Professor’s tone</p>
+<ul>
+<li>“So, how is it going with that…”, and the exclamation mark</li>
+<li>“Let’s watch one zebra crossing to find out!”</li>
+</ul>
+<p>are deeply inappropiate, and unhelpful.</p>
+<p>So what would help?</p>
+</section></section>
+<section>
+<section>
+<h1>What Do You Do with All These Ideas?</h1>
+<div class="h-stack"><div style="width:50.0000%"><div class="h-stack">
+<img alt="" src="./garden.png" width="100%"/>
+</div>
+</div>
+<div style="width:50.0000%"><p><strong>Plant them in a Digital Garden</strong></p>
+<ul>
+<li>Your personal space for thoughtful reflection</li>
+<li>Cultivate your ideas slowly, openly, and iteratively</li>
+<li>Share intentionally, seek feedback, and deepen understanding</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section>
+<h1>Next time you’re furious online…</h1>
+<p><strong>Hit CMD-X.</strong></p>
+<p>Reflect with an LLM, then plant your insights in a <strong>Digital Garden</strong>.</p>
+<p>It’s a cycle: <strong>Garden → LLM → Garden</strong>.</p>
+</section></section>
+<section>
+<section class="left-align">
+<h1>References</h1>
+<p>Digital Gardens:</p>
+<ul>
+<li>Mike Caulfield: The Garden and the Stream: A Technopastoral
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ckv_CjyKyZY">video</a></li>
+<li><a href="https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/">reading</a></li>
+</ul>
+</li>
+<li><a href="https://maggieappleton.com/garden-history">Maggie Appleton: A Brief History &amp; Ethos of the Digital Garden</a></li>
+</ul>
+<p>Tools for thought:</p>
+<ul>
+<li><a href="https://obsidian.md">Obsidian</a></li>
+<li><a href="https://stacks.cross.stream">Stacks: a clipboard manager</a></li>
+</ul>
+</section></section>
+
+    </div>
+</div>
+<div id="modal">
+    <span id="close">&times;</span>
+    <img src="" alt="demo image" id="img-demo">
+    <div id="caption"></div>
+</div>
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/math/math.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+<script>
+    function show_modal(a) {
+        $("#modal").css("display", "block");
+        $("#img-demo").attr("src", a.src);
+        $("#caption").html(a.alt);
+        Reveal.configure({keyboard: {27: close_modal}});
+    }
+
+    function close_modal() {
+        $("#modal").css("display", "none");
+        Reveal.configure({keyboard: {27: "toggleOverview"}});
+    }
+
+    Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [RevealNotes, RevealSearch, RevealHighlight, RevealMath.MathJax2, RevealZoom, ],
+        mathjax2: {
+            mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js',
+            config: 'TeX-AMS_HTML-full',
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)', '\\[', '\\]']],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        }
+    }).then(() => {
+        // Pinned objects
+        if (window.location.search.match(/print-pdf/gi)) {
+            $('div.slide-background').append($('.top-object'));
+            setTimeout(function () {
+                $('div.pdf-page').each((_, e) => $(e).find('.slide-background').append($(e).find('.chapter-header').show()));
+            }, 1000);
+        } else {
+            let top = $('div.reveal');
+            top.append($('.top-object'));
+            top.append($(Reveal.getCurrentSlide()).children('.chapter-header').show());
+            Reveal.on('slidechanged', e => {
+                $(e.previousSlide).append(top.children('.chapter-header').hide());
+                top.append($(e.currentSlide).children('.chapter-header').show());
+            });
+            // Close button
+            $("#close").click(close_modal);
+            
+        }
+        // Open external links in new windows or tabs
+        $('a').filter('[href^="http"], [href^="//"]')
+            .not('[href*="' + window.location.host + '"]')
+            .attr('rel', "noopener noreferrer")
+            .attr('target', '_blank');
+    });
+</script>
+</body>
+</html>
