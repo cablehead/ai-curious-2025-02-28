@@ -1,3 +1,21 @@
+## Installation
+
+Install rym using eget:
+
+```bash
+eget KmolYuan/reveal-yaml-rs
+```
+
+## Development
+
+To work on the slides locally:
+
+```bash
+rym serve . --no-open
+```
+
+This will start a local development server where you can preview your changes.
+
 ## to update `gh-pages`
 
 After changes on `main`:
